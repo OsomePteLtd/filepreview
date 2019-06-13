@@ -112,6 +112,9 @@ module.exports = {
           if (options.quality) {
             convertArgs.splice(0, 0, '-quality', options.quality);
           }
+          if (options.density) {
+            convertArgs.splice(0, 0, '-density', options.density);
+          }
           if (options.background) {
             convertArgs.splice(0, 0, '-background', options.background);
             convertArgs.splice(0, 0, '-flatten');
@@ -154,6 +157,9 @@ module.exports = {
               if (options.quality) {
                 convertOtherArgs.splice(0, 0, '-quality', options.quality);
               }
+              if (options.density) {
+                convertOtherArgs.splice(0, 0, '-density', options.density);
+              }
               child_process.execFile('convert', convertOtherArgs, function(error) {
                 if (error) return callback(error);
                 fs.unlink(tempPDF, function(error) {
@@ -177,6 +183,9 @@ module.exports = {
                 }
                 if (options.quality) {
                   convertOtherArgs.splice(0, 0, '-quality', options.quality);
+                }
+                if (options.density) {
+                  convertOtherArgs.splice(0, 0, '-density', options.density);
                 }
                 child_process.execFile('convert', convertOtherArgs, function(error) {
                   if (error) return callback(error);
@@ -296,6 +305,9 @@ module.exports = {
         if (options.quality) {
           convertArgs.splice(0, 0, '-quality', options.quality);
         }
+        if (options.density) {
+          convertArgs.splice(0, 0, '-density', options.density);
+        }
         if (options.background) {
           convertArgs.splice(0, 0, '-background', options.background);
           convertArgs.splice(0, 0, '-flatten');
@@ -340,6 +352,9 @@ module.exports = {
           if (options.quality) {
             convertOtherArgs.splice(0, 0, '-quality', options.quality);
           }
+          if (options.density) {
+            convertOtherArgs.splice(0, 0, '-density', options.density);
+          }
           child_process.execFileSync('convert', convertOtherArgs);
         } else {
           for ( var x = 0; x < pagerange_stop; x++ ) {
@@ -349,6 +364,9 @@ module.exports = {
             }
             if (options.quality) {
               convertOtherArgs.splice(0, 0, '-quality', options.quality);
+            }
+            if (options.density) {
+              convertOtherArgs.splice(0, 0, '-density', options.density);
             }
             child_process.execFileSync('convert', convertOtherArgs);
           }
