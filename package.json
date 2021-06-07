@@ -27,6 +27,6 @@
   },
   "homepage": "https://github.com/maxlabelle/filepreview#readme",
   "dependencies": {
-    "async": "^2.6.0"
+    "async": "^2.6.3"
   }
 }
